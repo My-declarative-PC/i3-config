@@ -206,16 +206,6 @@ bar {
     status_command    i3status
     position          top
     workspace_buttons yes
-
-    colors {
-        background #000000
-        statusline #ffffff
-
-        focused_workspace  #ffffff #285577
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
-    }
 }
 
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
@@ -226,3 +216,4 @@ default_border pixel 6
 default_floating_border pixel 8
 for_window [class="^.*"] border pixel 6
 
+include color.conf
