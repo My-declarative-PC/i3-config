@@ -442,6 +442,10 @@ exec_always --no-startup-id xrandr \
     --output LVDS-1 --pos "0x0"    --primary \
 	--output VGA-1  --pos "0x-900"
 
+# change keyboard layout
+exec_always --no-startup-id "setxkbmap -layout us,ru"
+exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
+
 ###############
 # system tray #
 ###############
