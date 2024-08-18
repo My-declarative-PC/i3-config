@@ -507,12 +507,14 @@ set $grey          #b0b5bd
 set $mediumgrey    #8b8b8b
 set $yellowbrown   #e1b700
 
-# define colors for windows:
-#class                  border     bground    text   indicator    child_border
-client.focused          $lightblue $darkblue  $white $mediumgrey  $mediumgrey
-client.unfocused        $darkblue  $darkblue  $grey  $darkgrey    $darkgrey
-client.focused_inactive $darkblue  $darkblue  $grey  $black       $black
-client.urgent           $urgentred $urgentred $white $yellowbrown $yellowbrown
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #BD93F9   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -538,14 +540,15 @@ bar {
     ##strip_workspace_name no
 
     colors {
-        separator  $purple
-        background $darkgrey
-        statusline $white
-        #                  border      bg          txt       indicator
-        focused_workspace  $mediumgrey $grey       $darkgrey $purple
-        active_workspace   $lightblue  $mediumgrey $darkgrey $purple
-        inactive_workspace $darkgrey   $darkgrey   $grey     $purple
-        urgent_workspace   $urgentred  $urgentred  $white    $purple
+        background #282A36
+        statusline #F8F8F2
+        separator  #44475A
+        #                  border  bg      txt indicator
+        focused_workspace  #44475A #44475A #F8F8F2
+        active_workspace   #282A36 #44475A #F8F8F2
+        inactive_workspace #282A36 #282A36 #BFBFBF
+        urgent_workspace   #FF5555 #FF5555 #F8F8F2
+        binding_mode       #FF5555 #FF5555 #F8F8F2
     }
 }
 
