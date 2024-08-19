@@ -441,7 +441,7 @@ exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/ende
 # set multy monitor configuration
 exec_always --no-startup-id xrandr \
     --output LVDS-1 --pos "0x0"    --primary \
-    --output VGA-1  --pos "0x-900"
+    --output VGA-1  --pos "0x900"
 
 # change keyboard layout
 exec_always --no-startup-id "setxkbmap -layout us,ru"
