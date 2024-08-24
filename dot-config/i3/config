@@ -293,7 +293,7 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id org.mozilla.firefox
-bindsym $mod+e exec --no-startup-id /usr/bin/thunar
+bindsym $mod+e exec --no-startup-id /usr/bin/nemo
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
@@ -328,14 +328,14 @@ set $ws10 "10"
 # bind program to workspace and focus to them on startup:
 assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws3
+assign [class="Nemo"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=org.wezfurlong.wezterm] focus
 for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
+for_window [class=Nemo] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
 
@@ -401,7 +401,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
+exec --no-startup-id sleep 1 && feh --bg-fill ~/backgrounds/endeavouros-wallpaper.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -435,7 +435,7 @@ exec --no-startup-id /usr/bin/dunst
 
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
-exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
+#exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
 
 # set multy monitor configuration
