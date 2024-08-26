@@ -450,6 +450,9 @@ exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 # Yandex disk tray-Indikator
 exec_always --no-startup-id yandex-disk-indicator
 
+# Network Aplet
+exec_always --no-startup-id nm-applet
+
 ###############
 # system tray #
 ###############
