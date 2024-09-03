@@ -401,7 +401,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill ~/backgrounds/endeavouros-wallpaper.png
+exec_always --no-startup-id sleep 1 && feh --bg-fill ~/dotfiles/wallpapers/evening-sky.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -452,6 +452,12 @@ exec_always --no-startup-id yandex-disk-indicator
 
 # Network Aplet
 exec_always --no-startup-id nm-applet
+
+# Network Aplet
+exec_always --no-startup-id nm-applet
+
+# Policy kit
+exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 ###############
 # system tray #
