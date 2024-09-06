@@ -397,7 +397,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id numlockx on
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+SHIFT in this example)
-exec_always --no-startup-id setxkbmap -layout 'us,ru' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
+exec_always --no-startup-id sleep 2 && setxkbmap -layout 'us,ru' -variant qwerty -option 'grp:alt_shift_toggle'
 
 # start conky:
 #exec_always --no-startup-id conky
