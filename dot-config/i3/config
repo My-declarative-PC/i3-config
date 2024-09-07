@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id org.wezfurlong.wezterm
+bindsym $mod+Return exec --no-startup-id org.wezfurlong.wezterm || wezterm
 
 # kill focused window
 bindsym $mod+q kill
