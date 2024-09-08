@@ -299,7 +299,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec --no-startup-id org.mozilla.firefox
+bindsym $mod+w exec --no-startup-id io.github.zen_browser.zen
 bindsym $mod+e exec --no-startup-id /usr/bin/nemo
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
@@ -334,14 +334,14 @@ set $ws10 "10"
 
 # bind program to workspace and focus to them on startup:
 assign [class="org.wezfurlong.wezterm"] $ws1
-assign [class="(?i)firefox"] $ws2
+assign [class="(?i)zen-alpha"] $ws2
 assign [class="Nemo"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=org.wezfurlong.wezterm] focus
-for_window [class=(?i)firefox] focus
+for_window [class=(?i)zen-alpha] focus
 for_window [class=Nemo] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
