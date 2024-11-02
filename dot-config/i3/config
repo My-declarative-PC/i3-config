@@ -186,8 +186,8 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 # lock with a picture:
 #bindsym $mod+Escape exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-# bindsym $mod+Escape exec --no-startup-id ~/.config/i3/scripts/blur-lock
-bindsym $mod+Escape exec --no-startup-id light-locker-command -l
+bindsym $mod+Escape exec --no-startup-id ~/.config/i3/scripts/blur-lock
+# bindsym $mod+Escape exec --no-startup-id light-locker-command -l
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
