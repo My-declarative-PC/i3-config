@@ -1,48 +1,62 @@
-#!/usr/bin/env bash
-# Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
+#!/bin/bash
 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Установка переменных
+ALERT_LOW="${ALERT_LOW:-10}"
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# Функция получения информации о диске
+get_disk_info() {
+    local mount_point=$1
+    local df_output=$(df -h -P "$mount_point" | tail -n 1)
+    local used=$(echo "$df_output" | awk '{print $5}' | sed 's/%//')
+    local available=$(echo "$df_output" | awk '{print $4}')
 
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    echo "$available|$used%"
+}
 
-DIR="${DIR:-$BLOCK_INSTANCE}"
-DIR="${DIR:-$HOME}"
-ALERT_LOW="${ALERT_LOW:-$1}"
-ALERT_LOW="${ALERT_LOW:-10}" # color will turn red under this value (default: 10%)
+# Получаем список всех примонтированных файловых систем
+# Исключаем виртуальные ФС и временные ФС
+MOUNTED_FILESYSTEMS=$(df -h -P | grep '^/dev/' | awk '{print $6}' | sort)
 
-LOCAL_FLAG="-l"
-if [ "$1" = "-n" ] || [ "$2" = "-n" ]; then
-    LOCAL_FLAG=""
+# Формируем вывод
+FULL_TEXT=""
+for fs in $MOUNTED_FILESYSTEMS; do
+    # Добавляем иконку в зависимости от типа монтирования
+    if [[ "$fs" == "/" ]]; then
+        ICON=""  # Корневой раздел
+    elif [[ "$fs" == "/home" ]]; then
+        ICON=""  # Домашний раздел
+    elif [[ "$fs" =~ ^/media.* || "$fs" =~ ^/run/media.* || "$fs" =~ ^/mnt.* ]]; then
+        ICON=""  # Съемные носители
+    else
+        continue # Пропускаем системные директории, которые обычно не нужно отображать
+    fi
+
+    INFO=$(get_disk_info "$fs")
+
+    # Добавляем информацию о диске к выводу
+    if [ -n "$FULL_TEXT" ]; then
+        FULL_TEXT="$FULL_TEXT "
+    fi
+    FULL_TEXT="${FULL_TEXT}${ICON}${INFO#$fs:}"
+done
+
+SHORT_TEXT=$FULL_TEXT
+
+# Проверяем пороговые значения для всех дисков
+ALERT=0
+for fs in $MOUNTED_FILESYSTEMS; do
+    USED=$(df -h -P "$fs" | tail -n 1 | awk '{print $5}' | sed 's/%//')
+    if [ $((100 - USED)) -lt $ALERT_LOW ]; then
+        ALERT=1
+        break
+    fi
+done
+
+# Выводим результаты
+echo "$FULL_TEXT"
+echo "$SHORT_TEXT"
+
+# Изменяем цвет, если какой-либо диск превышает порог
+if [ $ALERT -eq 1 ]; then
+    echo "#FF5555"
 fi
-
-df -h -P $LOCAL_FLAG "$DIR" | awk -v label="$LABEL" -v alert_low=$ALERT_LOW '
-/\/.*/ {
-	# full text
-	print label $4
-
-	# short text
-	print label $4
-
-	use=$5
-
-	# no need to continue parsing
-	exit 0
-}
-
-END {
-	gsub(/%$/,"",use)
-	if (100 - use < alert_low) {
-		# color
-		print "#FF0000"
-	}
-}
-'

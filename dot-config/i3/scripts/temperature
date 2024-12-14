@@ -23,6 +23,7 @@ use strict;
 use warnings;
 use utf8;
 use Getopt::Long;
+use POSIX qw(round);
 
 binmode(STDOUT, ":utf8");
 
@@ -50,7 +51,7 @@ GetOptions("help|h" => \&help,
 open (SENSORS, "sensors -u $chip |") or die;
 while (<SENSORS>) {
     if (/^\s+temp1_input:\s+[\+]*([\-]*\d+\.\d)/) {
-        $temperature = $1;
+        $temperature = round($1);
         last;
     }
 }
@@ -69,18 +70,19 @@ if ($temperature < 45) {
 } else {
   $label = '';
 }
+
 # Print short_text, full_text
 print "${label}";
-print " $temperature°C\n";
+print "$temperature°\n";
 print "${label}";
-print " $temperature°C\n";
+print "$temperature°\n";
 
 # Print color, if needed
 if ($temperature >= $t_crit) {
-    print "#FF0000\n";
+    print "#FF5555\n";
     exit 33;
 } elsif ($temperature >= $t_warn) {
-    print "#FFFC00\n";
+    print "#F1FA8C\n";
 }
 
 exit 0;
