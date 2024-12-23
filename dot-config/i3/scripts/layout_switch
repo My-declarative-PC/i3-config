@@ -3,7 +3,7 @@
 CURRENT_LAYOUT=$(setxkbmap -query | grep layout | awk '{print $2}')
 
 if [ "$CURRENT_LAYOUT" = "us" ]; then
-  echo "🇺🇸"
+    setxkbmap -layout ru
 else
-  echo "🇷🇺"
+    setxkbmap -layout us
 fi
