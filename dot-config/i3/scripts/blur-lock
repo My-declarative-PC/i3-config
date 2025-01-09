@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+setxkbmap -layout us,ru
+
 PICTURE=/tmp/i3lock.png
 SCREENSHOT="maim $PICTURE"
 
