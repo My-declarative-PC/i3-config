@@ -5,6 +5,8 @@ SCREENSHOT="maim $PICTURE"
 
 $SCREENSHOT
 
+notify-send -a "i3 blur-lock" Locking "The screen lock process has started"
+
 BLUR="5x5"
 magick $PICTURE -noise 2 -blur $BLUR -scale 10% -scale 1000% $PICTURE
 
