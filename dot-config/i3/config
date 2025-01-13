@@ -511,6 +511,8 @@ for_window [class="urxvt"] border pixel 1
 # set position of floating window
 #for_window [class=".*"] move position center
 
+for_window [class="Xfce4-clipman-history"] floating enable
+
 ######################################
 # color settings for bar and windows #
 ######################################
