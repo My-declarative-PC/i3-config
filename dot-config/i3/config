@@ -457,9 +457,7 @@ exec --no-startup-id /usr/bin/dunst
 #exec --no-startup-id sleep 3 && thunar
 
 # set multi monitor configuration
-exec_always --no-startup-id xrandr \
-    --output VGA-1  --pos "0x0" --primary \
-    --output LVDS-1 --pos "0x900"
+exec_always --no-startup-id "bash ~/.config/i3/monitor-setup.sh"
 
 # Policy kit
 exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
