@@ -562,6 +562,26 @@ bar {
     }
 }
 
+bar {
+    output nonprimary
+    font pango: FiraCode 11
+    position top
+    tray_output none
+    strip_workspace_name no
+
+    colors {
+        background #282A36
+        statusline #F8F8F2
+        separator  #44475A
+    output primary
+        focused_workspace  #44475A #44475A #F8F8F2
+        active_workspace   #282A36 #44475A #F8F8F2
+        inactive_workspace #282A36 #282A36 #BFBFBF
+        urgent_workspace   #FF5555 #FF5555 #F8F8F2
+        binding_mode       #FF5555 #FF5555 #F8F8F2
+    }
+}
+
 # you can add different bars for multidisplay setups on each display:
 # set output HDMI-0 to the display you want the bar, --transparency can be set.
 # Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
