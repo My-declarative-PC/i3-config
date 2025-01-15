@@ -12,8 +12,6 @@ magick $PICTURE -noise 2 -blur $BLUR -scale 10% -scale 1000% $PICTURE
 
 setxkbmap -layout us,ru
 
-dunstctl set-paused true
 i3lock -i $PICTURE
-dunstctl set-paused false
 
 rm $PICTURE
