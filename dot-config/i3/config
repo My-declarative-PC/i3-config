@@ -68,8 +68,8 @@ title_align center
 floating_modifier $mod
 
 # switch/iterate between workspaces
-#bindsym $mod+Tab workspace next
-#bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # switch to workspace
 bindcode $mod+10    workspace  $ws1
@@ -82,6 +82,17 @@ bindcode $mod+16    workspace  $ws7
 bindcode $mod+17    workspace  $ws8
 bindcode $mod+18    workspace  $ws9
 bindcode $mod+19    workspace  $ws10
+# switch to workspace on second monitor
+bindcode $mod+Mod1+10    workspace  $ws11
+bindcode $mod+Mod1+11    workspace  $ws12
+bindcode $mod+Mod1+12    workspace  $ws13
+bindcode $mod+Mod1+13    workspace  $ws14
+bindcode $mod+Mod1+14    workspace  $ws15
+bindcode $mod+Mod1+15    workspace  $ws16
+bindcode $mod+Mod1+16    workspace  $ws17
+bindcode $mod+Mod1+17    workspace  $ws18
+bindcode $mod+Mod1+18    workspace  $ws19
+bindcode $mod+Mod1+19    workspace  $ws20
 
 # switch to workspace with numpad keys
 bindcode $mod+87 workspace $ws1
@@ -94,6 +105,17 @@ bindcode $mod+79 workspace $ws7
 bindcode $mod+80 workspace $ws8
 bindcode $mod+81 workspace $ws9
 bindcode $mod+90 workspace $ws10
+# switch to workspace with numpad keys on second monitor
+bindcode $mod+Mod1+87 workspace $ws11
+bindcode $mod+Mod1+88 workspace $ws12
+bindcode $mod+Mod1+89 workspace $ws13
+bindcode $mod+Mod1+83 workspace $ws14
+bindcode $mod+Mod1+84 workspace $ws15
+bindcode $mod+Mod1+85 workspace $ws16
+bindcode $mod+Mod1+79 workspace $ws17
+bindcode $mod+Mod1+80 workspace $ws18
+bindcode $mod+Mod1+81 workspace $ws19
+bindcode $mod+Mod1+90 workspace $ws20
 
 # switch to workspace with numlock numpad keys
 bindcode $mod+Mod2+87 workspace $ws1
@@ -106,6 +128,17 @@ bindcode $mod+Mod2+79 workspace $ws7
 bindcode $mod+Mod2+80 workspace $ws8
 bindcode $mod+Mod2+81 workspace $ws9
 bindcode $mod+Mod2+90 workspace $ws10
+# switch to workspace with numlock numpad keys on second monitor
+bindcode $mod+Mod1+Mod2+87 workspace $ws11
+bindcode $mod+Mod1+Mod2+88 workspace $ws12
+bindcode $mod+Mod1+Mod2+89 workspace $ws13
+bindcode $mod+Mod1+Mod2+83 workspace $ws14
+bindcode $mod+Mod1+Mod2+84 workspace $ws15
+bindcode $mod+Mod1+Mod2+85 workspace $ws16
+bindcode $mod+Mod1+Mod2+79 workspace $ws17
+bindcode $mod+Mod1+Mod2+80 workspace $ws18
+bindcode $mod+Mod1+Mod2+81 workspace $ws19
+bindcode $mod+Mod1+Mod2+90 workspace $ws20
 
 # move focused container to workspace
 bindcode $mod+Shift+10    move container to workspace  $ws1
@@ -118,6 +151,17 @@ bindcode $mod+Shift+16    move container to workspace  $ws7
 bindcode $mod+Shift+17    move container to workspace  $ws8
 bindcode $mod+Shift+18    move container to workspace  $ws9
 bindcode $mod+Shift+19    move container to workspace  $ws10
+# move focused container to workspace on second monitor
+bindcode $mod+Shift+Mod1+10    move container to workspace  $ws11
+bindcode $mod+Shift+Mod1+11    move container to workspace  $ws12
+bindcode $mod+Shift+Mod1+12    move container to workspace  $ws13
+bindcode $mod+Shift+Mod1+13    move container to workspace  $ws14
+bindcode $mod+Shift+Mod1+14    move container to workspace  $ws15
+bindcode $mod+Shift+Mod1+15    move container to workspace  $ws16
+bindcode $mod+Shift+Mod1+16    move container to workspace  $ws17
+bindcode $mod+Shift+Mod1+17    move container to workspace  $ws18
+bindcode $mod+Shift+Mod1+18    move container to workspace  $ws19
+bindcode $mod+Shift+Mod1+19    move container to workspace  $ws20
 
 # move focused container to workspace with numpad keys
 bindcode $mod+Shift+Mod2+87     move container to workspace  $ws1
@@ -130,6 +174,17 @@ bindcode $mod+Shift+Mod2+79     move container to workspace  $ws7
 bindcode $mod+Shift+Mod2+80     move container to workspace  $ws8
 bindcode $mod+Shift+Mod2+81     move container to workspace  $ws9
 bindcode $mod+Shift+Mod2+90     move container to workspace  $ws10
+# move focused container to workspace on second monitor
+bindcode $mod+Shift+Mod1+87    move container to workspace  $ws11
+bindcode $mod+Shift+Mod1+88    move container to workspace  $ws12
+bindcode $mod+Shift+Mod1+89    move container to workspace  $ws13
+bindcode $mod+Shift+Mod1+83    move container to workspace  $ws14
+bindcode $mod+Shift+Mod1+84    move container to workspace  $ws15
+bindcode $mod+Shift+Mod1+85    move container to workspace  $ws16
+bindcode $mod+Shift+Mod1+79    move container to workspace  $ws17
+bindcode $mod+Shift+Mod1+80    move container to workspace  $ws18
+bindcode $mod+Shift+Mod1+81    move container to workspace  $ws19
+bindcode $mod+Shift+Mod1+90    move container to workspace  $ws20
 
 # move focused container to workspace with numpad keys
 bindcode $mod+Shift+87      move container to workspace  $ws1
@@ -333,6 +388,17 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $ws11 "1'"
+set $ws12 "2'"
+set $ws13 "3'"
+set $ws14 "4'"
+set $ws15 "5'"
+set $ws16 "6'"
+set $ws17 "7'"
+set $ws18 "8'"
+set $ws19 "9'"
+set $ws20 "10'"
+
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
@@ -341,20 +407,41 @@ set $ws10 "10"
 #workspace $ws3 output HDMI-0
 #workspace $ws4 output HDMI-0
 #workspace $ws5 output HDMI-0
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+workspace $ws9 output primary
+workspace $ws10 output primary
+
+workspace $ws11 output nonprimary
+workspace $ws12 output nonprimary
+workspace $ws13 output nonprimary
+workspace $ws14 output nonprimary
+workspace $ws15 output nonprimary
+workspace $ws16 output nonprimary
+workspace $ws17 output nonprimary
+workspace $ws18 output nonprimary
+workspace $ws19 output nonprimary
+workspace $ws20 output nonprimary
 
 # bind program to workspace and focus to them on startup:
 assign [class="org.wezfurlong.wezterm"] $ws1
 assign [class="firefox"] $ws2
-assign [class="thunar"] $ws3
+assign [class="Thunar"] $ws3
 assign [class="thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
+assign [class="Skype"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=org.wezfurlong.wezterm] focus
 for_window [class=firefox] focus
-for_window [class=thunar] focus
+for_window [class=Thunar] focus
 for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
+for_window [class=Skype] focus
 
 ##############
 # compositor #
@@ -484,6 +571,7 @@ exec --no-startup-id yandex-disk-indicator
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="TelegramDesktop"] floating enable
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
@@ -539,8 +627,8 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-bindsym $mod+Tab exec --no-startup-id rofi -show window \
-        -config ~/.config/rofi/rofidmenu.rasi
+bindsym Mod1+Tab exec --no-startup-id rofi -show window \
+        config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F10 exec --no-startup-id rofi -show window \
 #        -config ~/.config/rofi/rofidmenu.rasi
