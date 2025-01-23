@@ -18,24 +18,24 @@ docker = "\uf395"
 [[block]]
 block = "disk_space"
 path = "/"
-info_type = "available"
+info_type = "used"
 alert_unit = "GB"
 interval = 30
-warning = 20.0
-alert = 10.0
-format = " $icon$percentage"
-format_alt = " $icon$available/$total"
+warning = 80.0
+alert = 90.0
+format = " $percentage $icon "
+format_alt = " $used/$total $icon"
 
 [[block]]
 block = "disk_space"
 path = "/home"
-info_type = "available"
+info_type = "used"
 alert_unit = "GB"
 interval = 30
-warning = 20.0
-alert = 10.0
-format = " $icon$percentage"
-format_alt = " $icon$available/$total"
+warning = 80.0
+alert = 90.0
+format = " $percentage $icon "
+format_alt = " $used/$total $icon"
 if_command = "! [ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
 [block.icons_overrides]
 disk_drive = "\ue1b0"
