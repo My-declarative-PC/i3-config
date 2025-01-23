@@ -45,7 +45,7 @@ disk_drive = "\ue1b0"
 [[block]]
 block = "memory"
 format = " $mem_used_percents $icon "
-format_alt = " $mem_free/$mem_total $icon"
+format_alt = " $mem_used/$mem_total $icon"
 interval = 5
 
 [[block]]
