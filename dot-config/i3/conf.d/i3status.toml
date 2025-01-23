@@ -21,10 +21,9 @@ docker = "\uf395"
 block = "disk_space"
 path = "/"
 info_type = "used"
-alert_unit = "GB"
 interval = 30
-warning = 80.0
-alert = 90.0
+warning = 70.0
+alert = 80.0
 format = " $percentage $icon "
 format_alt = " $used/$total $icon"
 
@@ -32,10 +31,9 @@ format_alt = " $used/$total $icon"
 block = "disk_space"
 path = "/home"
 info_type = "used"
-alert_unit = "GB"
 interval = 30
-warning = 80.0
-alert = 90.0
+warning = 70.0
+alert = 80.0
 format = " $percentage $icon "
 format_alt = " $used/$total $icon"
 if_command = "! [ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
