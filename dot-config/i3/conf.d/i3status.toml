@@ -59,6 +59,7 @@ chip = "*-isa-*"
 
 [[block]]
 block = "battery"
+driver = "upower"
 interval = 30
 format = " $percentage $icon "
 if_command = "test -e /sys/class/power_supply/BAT0"
