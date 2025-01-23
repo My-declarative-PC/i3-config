@@ -9,6 +9,13 @@ icons = "awesome6"
 
 ### Blocks
 [[block]]
+block = "docker"
+interval = 2
+format = "i:$images r:$running t:$total $icon "
+[block.icons_overrides]
+docker = "\uf395"
+
+[[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"
