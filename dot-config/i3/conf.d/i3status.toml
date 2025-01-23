@@ -65,11 +65,11 @@ block = "sound"
 format = " $icon$volume"
 
 [[block]]
-block = "custom"
-command = "~/.config/i3/scripts/keyboard-layout"
-interval = 1
-
-[[block]]
 block = "time"
 interval = 5
 format = " $icon$timestamp.datetime(f:'%a %d.%m.%y %H:%M:%S')"
+
+[[block]]
+block = "custom"
+command = "~/.config/i3/scripts/keyboard-layout"
+interval = 1
