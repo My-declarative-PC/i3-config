@@ -204,18 +204,22 @@ mode "resize" {
 
     # Pressing left will shrink the window's width.
     bindsym h resize shrink width 10 px or 10 ppt
+    bindsym р resize shrink width 10 px or 10 ppt # for RUS
     bindsym Left resize shrink width 10 px or 10 ppt
 
     # Pressing down will grow the window's height.
     bindsym j resize grow height 10 px or 10 ppt
+    bindsym о resize grow height 10 px or 10 ppt # for RUS
     bindsym Down resize grow height 10 px or 10 ppt
 
     # Pressing up will shrink the window's height.
     bindsym k resize shrink height 10 px or 10 ppt
+    bindsym л resize shrink height 10 px or 10 ppt # for RUS
     bindsym Up resize shrink height 10 px or 10 ppt
 
     # Pressing right will grow the window's width.
     bindsym l resize grow width 10 px or 10 ppt
+    bindsym д resize grow width 10 px or 10 ppt # for RUS
     bindsym Right resize grow width 10 px or 10 ppt
 
     # back to normal: Enter or Escape
@@ -358,6 +362,7 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 bindsym $mod+w exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id thunar
 bindsym $mod+Shift+t [class="TelegramDesktop"] scratchpad show
+bindsym $mod+Shift+е [class="TelegramDesktop"] scratchpad show # for RUS
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
