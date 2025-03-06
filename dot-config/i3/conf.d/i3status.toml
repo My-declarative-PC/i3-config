@@ -1,10 +1,9 @@
 ### Appirence
 [theme]
-theme = "dracula"
+theme = "ctp-mocha"
 [theme.overrides]
-separator = "┆"
-separator_bg = "#282a36"
-separator_fg = "#f8f8f2"
+separator = " "
+separator_bg = "#1e1e2e"
 
 [icons]
 icons = "awesome6"
