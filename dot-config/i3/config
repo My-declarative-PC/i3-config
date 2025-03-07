@@ -359,7 +359,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec --no-startup-id firefox
+bindsym $mod+w exec --no-startup-id app.zen_browser.zen || firefox
 bindsym $mod+e exec --no-startup-id thunar
 bindsym $mod+Shift+t [class="TelegramDesktop"] scratchpad show
 bindsym $mod+Shift+е [class="TelegramDesktop"] scratchpad show # for RUS
@@ -437,14 +437,14 @@ workspace $ws20 output nonprimary
 
 # bind program to workspace and focus to them on startup:
 assign [class="org.wezfurlong.wezterm"] $ws1
-assign [class="firefox"] $ws2
+assign [class="zen"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="Skype"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=org.wezfurlong.wezterm] focus
-for_window [class=firefox] focus
+for_window [class=zen] focus
 for_window [class=Thunar] focus
 for_window [class=Thunderbird] focus
 for_window [class=Skype] focus
@@ -609,13 +609,13 @@ for_window [class="Xfce4-clipman-history"] floating enable
 ######################################
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #BD93F9   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #b4befe #b4befe #cdd6f4 #cba6f7   #b4befe
+client.focused_inactive #11111b #11111b #cdd6f4 #11111b   #11111b
+client.unfocused        #1e1e2e #1e1e2e #6c7086 #1e1e2e   #1e1e2e
+client.urgent           #11111b #f38ba8 #cdd6f4 #f38ba8   #f38ba8
+client.placeholder      #1e1e2e #1e1e2e #cdd6f4 #1e1e2e   #1e1e2e
 
-client.background       #F8F8F2
+client.background       #cdd6f4
 
 ############################################
 # bar settings (input comes from i3blocks) #
