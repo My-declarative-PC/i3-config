@@ -441,6 +441,7 @@ assign [class="zen"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="Skype"] $ws5
+assign [class="vkteams"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=org.wezfurlong.wezterm] focus
@@ -448,6 +449,7 @@ for_window [class=zen] focus
 for_window [class=Thunar] focus
 for_window [class=Thunderbird] focus
 for_window [class=Skype] focus
+for_window [class=vkteams] focus
 
 ##############
 # compositor #
