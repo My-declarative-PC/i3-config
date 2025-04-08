@@ -61,9 +61,14 @@ if_command = "test -e /sys/class/power_supply/BAT0"
 
 [[block]]
 block = "bluetooth"
+mac = "D2:01:D1:C0:7C:55"
+disconnected_format = ""
+format = "{ $percentage|} $icon "
+[[block]]
+block = "bluetooth"
 mac = "1A:2B:5B:FF:00:A3"
-disconnected_format = " $icon $name "
-format = "{ $percentage|} $icon $name "
+disconnected_format = " $icon "
+format = "{ $percentage|} $icon "
 
 # [[block]]
 # block = "net"
