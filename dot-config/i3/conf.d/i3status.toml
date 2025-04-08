@@ -56,6 +56,12 @@ interval = 30
 format = " $percentage $icon "
 if_command = "test -e /sys/class/power_supply/BAT0"
 
+[[block]]
+block = "bluetooth"
+mac = "1A:2B:5B:FF:00:A3"
+disconnected_format = " $name "
+format = "{ $percentage|} $icon $name "
+
 # [[block]]
 # block = "net"
 # format = " $ssid $icon "
@@ -64,12 +70,6 @@ if_command = "test -e /sys/class/power_supply/BAT0"
 [[block]]
 block = "sound"
 format = " $volume $icon "
-
-[[block]]
-block = "hueshift"
-hue_shifter = "gammastep"
-step = 50
-click_temp = 4500
 
 [[block]]
 block = "time"
