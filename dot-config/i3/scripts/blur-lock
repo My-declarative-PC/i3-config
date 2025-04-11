@@ -11,6 +11,7 @@ BLUR="2x5"
 magick $PICTURE -noise 4 -scale 10% -scale 1000% -blur $BLUR $PICTURE
 
 setxkbmap -layout us,ru
+playerctl pause
 
 i3lock -i $PICTURE
 
