@@ -238,9 +238,6 @@ bindsym $mod+Return exec --no-startup-id org.wezfurlong.wezterm || wezterm
 # kill focused window
 bindsym $mod+q kill
 
-# exit-menu
-bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
-
 # Lock the system
 # lock with a picture:
 #bindsym $mod+Escape exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
@@ -253,12 +250,6 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+Shift+r restart
-
-# keybinding in fancy rofi (automated):
-bindsym $mod+F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
-# alternative
-# keybinding list in editor:
-# bindsym $mod+F1 exec --no-startup-id xed ~/.config/i3/keybindings
 
 # Backlight control
 #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
