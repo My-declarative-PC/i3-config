@@ -629,13 +629,21 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 
 mode "Rofi" {
     ## rofi bindings for window menu
-    bindsym w exec --no-startup-id rofi -show window; mode "default"
+    bindsym w exec --no-startup-id rofi -show window; \
+        mode "default"
 
     ## rofi bindings for emoji pic
-    bindsym e exec --no-startup-id rofimoji; mode "default"
+    bindsym e exec --no-startup-id rofimoji; \
+        mode "default"
+
+    ## rofi bindings for calc
+    bindsym k exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort \
+        -calc-command "echo -n '{result}' | xclip -i -selection clipboard"; \
+        mode "default"
 
     ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
-    bindsym c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard; mode "default"
+    bindsym c exec --no-startup-id bash ~/.config/i3/scripts/rofi-clip.sh; \
+        mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
