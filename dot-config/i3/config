@@ -625,7 +625,7 @@ include ~/.config/i3/conf.d/bar.conf
 #####################################
 
 ## rofi bindings fancy application menu
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 mode "Rofi" {
     ## rofi bindings for window menu
@@ -637,7 +637,7 @@ mode "Rofi" {
         mode "default"
 
     ## rofi bindings for calc
-    bindsym k exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort \
+    bindsym k exec --no-startup-id rofi -show calc -no-show-match -no-sort \
         -calc-command "echo -n '{result}' | xclip -i -selection clipboard"; \
         mode "default"
 
