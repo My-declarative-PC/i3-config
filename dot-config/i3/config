@@ -633,7 +633,7 @@ mode "Rofi" {
         mode "default"
 
     ## rofi bindings for emoji pic
-    bindsym e exec --no-startup-id rofimoji; \
+    bindsym e exec --no-startup-id rofimoji -f emojis math arrows; \
         mode "default"
 
     ## rofi bindings for calc
