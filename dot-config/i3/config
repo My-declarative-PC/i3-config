@@ -646,7 +646,7 @@ mode "Rofi" {
         mode "default"
 
     ## rofi bindings for network
-    bindsym n exec --no-startup-id rofi -show net; \
+    bindsym n exec --no-startup-id ronema; \
         mode "default"
 
     ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
