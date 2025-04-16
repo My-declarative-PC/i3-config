@@ -633,7 +633,7 @@ mode "Rofi" {
         mode "default"
 
     ## rofi bindings for emoji pic
-    bindsym e exec --no-startup-id rofi -show emoji; \
+    bindsym e exec --no-startup-id rofimoji -f emojis math arrows; \
         mode "default"
 
     ## rofi bindings for calc
@@ -649,8 +649,12 @@ mode "Rofi" {
     bindsym n exec --no-startup-id ronema; \
         mode "default"
 
+    ## rofi bindings for network
+    bindsym Shift+w exec --no-startup-id bash ~/.config/rofi/scripts/rofi-weather.sh; \
+        mode "default"
+
     ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
-    bindsym c exec --no-startup-id rofi -show clip; \
+    bindsym c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard; \
         mode "default"
 
     # back to normal: Enter or Escape
