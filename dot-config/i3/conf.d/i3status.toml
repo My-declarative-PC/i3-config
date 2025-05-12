@@ -21,7 +21,7 @@ interval = 30
 warning = 70.0
 alert = 80.0
 format = " $percentage $icon "
-format_alt = " $used/$total $icon"
+format_alt = " $used/$total $icon "
 if_command = "[ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
 merge_with_next = false
 
@@ -32,7 +32,7 @@ info_type = "used"
 interval = 30
 warning = 70.0
 alert = 80.0
-format = " $percentage $icon "
+format = " $percentage $icon"
 format_alt = " $used/$total $icon"
 if_command = "! [ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
 merge_with_next = true
@@ -44,8 +44,8 @@ info_type = "used"
 interval = 30
 warning = 70.0
 alert = 80.0
-format = " $percentage $icon "
-format_alt = " $used/$total $icon"
+format = " $percentage $icon  "
+format_alt = " $used/$total $icon  "
 if_command = "! [ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
 [block.icons_overrides]
 disk_drive = "\ue1b0"
