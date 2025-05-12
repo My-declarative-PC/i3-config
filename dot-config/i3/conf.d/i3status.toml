@@ -12,6 +12,7 @@ icons = "awesome6"
 [[block]]
 block = "scratchpad"
 
+# disk space
 [[block]]
 block = "disk_space"
 path = "/"
@@ -21,6 +22,20 @@ warning = 70.0
 alert = 80.0
 format = " $percentage $icon "
 format_alt = " $used/$total $icon"
+if_command = "[ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
+merge_with_next = false
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "used"
+interval = 30
+warning = 70.0
+alert = 80.0
+format = " $percentage $icon "
+format_alt = " $used/$total $icon"
+if_command = "! [ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
+merge_with_next = true
 
 [[block]]
 block = "disk_space"
@@ -34,6 +49,7 @@ format_alt = " $used/$total $icon"
 if_command = "! [ \"$(df -P /home | awk 'NR==2 {print $1}')\" = \"$(df -P / | awk 'NR==2 {print $1}')\" ]"
 [block.icons_overrides]
 disk_drive = "\ue1b0"
+# # # # #
 
 [[block]]
 block = "memory"
