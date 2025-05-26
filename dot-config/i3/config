@@ -251,6 +251,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+Shift+r restart
 
+# Reload autorandr setup.
+bindsym $mod+Control+r exec "autorandr -c"
+
 # Backlight control
 #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
@@ -476,6 +479,9 @@ exec_always --no-startup-id picom -b
 # autostart applications/services on login: #
 #############################################
 
+# set monitor layout
+exec_always --no-startup-id "autorandr --change"
+
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -493,7 +499,7 @@ exec --no-startup-id dex --autostart --environment i3
 # num lock activated
 #exec --no-startup-id numlockx on
 
-# configure multiple keyboard layouts and hotkey to switch (Alt+SHIFT in this example)
+# configure multiple keyboard layouts and hotkey to switch (Alt+Space in this example)
 exec_always --no-startup-id sleep 2 && setxkbmap -layout us,ru -variant qwerty
 bindsym Mod1+space exec --no-startup-id ~/.config/i3/scripts/layout_switch
 
@@ -502,7 +508,7 @@ bindsym Mod1+space exec --no-startup-id ~/.config/i3/scripts/layout_switch
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec_always --no-startup-id bash ~/.config/i3/scripts/monitor-setup.sh
+# exec_always --no-startup-id bash ~/.config/i3/scripts/monitor-setup.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
