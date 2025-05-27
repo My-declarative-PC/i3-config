@@ -319,7 +319,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # open new empty workspace
-bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/scripts/empty_workspace
+bindsym $mod+Shift+n exec --no-startup-id bash ~/.config/i3/scripts/empty_workspace
 
 # Multimedia Keys
 
